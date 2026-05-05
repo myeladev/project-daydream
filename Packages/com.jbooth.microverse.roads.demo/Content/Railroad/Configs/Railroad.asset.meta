@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 49f5886e542d13e4986d55ac5e3d9eab
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads.demo/Content/Railroad/Configs/Railroad.asset
+  uploadId: 817924

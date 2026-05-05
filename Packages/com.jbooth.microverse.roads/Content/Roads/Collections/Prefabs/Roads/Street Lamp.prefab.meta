@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1037404d30eec954e9fd4d444e3af2f1
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads/Content/Roads/Collections/Prefabs/Roads/Street
+    Lamp.prefab
+  uploadId: 817924

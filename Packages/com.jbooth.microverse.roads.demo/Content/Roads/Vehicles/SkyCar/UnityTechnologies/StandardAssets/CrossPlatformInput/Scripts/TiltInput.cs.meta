@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: fe4a41b77c8c49319b57271f1fb7832b
+labels:
+- Not
+- Fully
+- Implemented
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: -1001
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads.demo/Content/Roads/Vehicles/SkyCar/UnityTechnologies/StandardAssets/CrossPlatformInput/Scripts/TiltInput.cs
+  uploadId: 817924

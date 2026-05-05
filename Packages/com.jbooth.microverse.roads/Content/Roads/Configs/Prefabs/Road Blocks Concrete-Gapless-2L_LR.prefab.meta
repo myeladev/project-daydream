@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 9604dce2c26ea6f48bcd43326d55db9f
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads/Content/Roads/Configs/Prefabs/Road
+    Blocks Concrete-Gapless-2L_LR.prefab
+  uploadId: 817924

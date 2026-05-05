@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 0ef6daad92761574180063ec38590b62
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads.demo/Content/Railroad/Collections/Prefabs/Roads/Train.prefab
+  uploadId: 817924

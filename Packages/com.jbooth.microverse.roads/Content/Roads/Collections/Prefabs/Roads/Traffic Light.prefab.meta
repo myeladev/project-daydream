@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e5e6e7026905f3f49892592205d16f5c
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads/Content/Roads/Collections/Prefabs/Roads/Traffic
+    Light.prefab
+  uploadId: 817924

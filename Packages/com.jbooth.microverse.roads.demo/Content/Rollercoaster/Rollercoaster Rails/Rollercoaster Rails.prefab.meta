@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 16c748142f70d754fa5911e2e732c0b8
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads.demo/Content/Rollercoaster/Rollercoaster
+    Rails/Rollercoaster Rails.prefab
+  uploadId: 817924

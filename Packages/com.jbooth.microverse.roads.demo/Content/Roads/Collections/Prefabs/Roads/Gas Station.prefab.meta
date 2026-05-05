@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8fdb317acc41f9748ac9bbd3ba17e2cb
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads.demo/Content/Roads/Collections/Prefabs/Roads/Gas
+    Station.prefab
+  uploadId: 817924

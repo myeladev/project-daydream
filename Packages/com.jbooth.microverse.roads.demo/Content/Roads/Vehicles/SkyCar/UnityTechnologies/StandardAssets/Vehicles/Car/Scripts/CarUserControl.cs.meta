@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: ba5e07421a5b4f8495f298477ac15aa6
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads.demo/Content/Roads/Vehicles/SkyCar/UnityTechnologies/StandardAssets/Vehicles/Car/Scripts/CarUserControl.cs
+  uploadId: 817924

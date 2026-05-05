@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 509f46cd1945016428e13fe73db11631
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads/Content/Roads/Prefabs/Intersection
+    2 Lanes Circle.prefab
+  uploadId: 817924

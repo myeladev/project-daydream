@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: bf9abde1b6edaee4d9786a4df48611a0
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads.demo/Content/Roads/Buildings/Gas
+    Station/Gas Pump.prefab
+  uploadId: 817924

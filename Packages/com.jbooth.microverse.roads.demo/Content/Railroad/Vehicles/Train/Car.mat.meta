@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 230d34d8d4039b94d9abdc22af0d06f3
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads.demo/Content/Railroad/Vehicles/Train/Car.mat
+  uploadId: 817924

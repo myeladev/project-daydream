@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 2f728ef6e633f174c8417791223c5ae6
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads.demo/Content/Railroad/Railroad
+    Tracks/Railroad Tracks.mat
+  uploadId: 817924

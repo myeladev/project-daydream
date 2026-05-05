@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4199258aac0f5194a9a62162d3dbe7ec
+PackageManifestImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads.demo/package.json
+  uploadId: 817924

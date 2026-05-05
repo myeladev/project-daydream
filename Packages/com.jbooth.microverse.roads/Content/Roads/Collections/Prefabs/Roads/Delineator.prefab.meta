@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a2d38d5bdd9a6c943bba6b22e4616097
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads/Content/Roads/Collections/Prefabs/Roads/Delineator.prefab
+  uploadId: 817924

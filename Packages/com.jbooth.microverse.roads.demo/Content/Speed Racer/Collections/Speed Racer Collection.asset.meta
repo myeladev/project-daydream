@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 7f4face7ac5825343aa3a8bc8a0ca708
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads.demo/Content/Speed Racer/Collections/Speed
+    Racer Collection.asset
+  uploadId: 817924

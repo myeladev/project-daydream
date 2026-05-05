@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8dbb3a2cc650cc0459f89c5f62f55649
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads/Content/Roads/Collections/Prefabs/Road
+    3 Lanes.prefab
+  uploadId: 817924

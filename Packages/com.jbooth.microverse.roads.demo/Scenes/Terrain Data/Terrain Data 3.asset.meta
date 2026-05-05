@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: b3d39219e3352614b826b9807d6b7c47
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 15600000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads.demo/Scenes/Terrain Data/Terrain
+    Data 3.asset
+  uploadId: 817924

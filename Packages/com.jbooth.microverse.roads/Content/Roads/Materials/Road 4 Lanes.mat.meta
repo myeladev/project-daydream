@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: dc358716e79e5b34ab6c84a090d49cd0
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads/Content/Roads/Materials/Road 4
+    Lanes.mat
+  uploadId: 817924

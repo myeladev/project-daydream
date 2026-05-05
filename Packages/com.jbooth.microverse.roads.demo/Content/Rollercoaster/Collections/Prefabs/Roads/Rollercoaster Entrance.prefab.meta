@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 75a5a41c9c5f0ce41a7cd79bd4190c81
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads.demo/Content/Rollercoaster/Collections/Prefabs/Roads/Rollercoaster
+    Entrance.prefab
+  uploadId: 817924

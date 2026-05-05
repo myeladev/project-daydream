@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 14be6a60999f6ed428fe693da7571cbb
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads/Content/Roads/Configs/Prefabs/Mesh
+    Fence-2L_L.prefab
+  uploadId: 817924

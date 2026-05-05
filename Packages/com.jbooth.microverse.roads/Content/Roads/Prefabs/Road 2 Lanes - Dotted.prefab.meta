@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0210d0cd2ff44ff4ebd6c5b9c150f086
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads/Content/Roads/Prefabs/Road 2 Lanes
+    - Dotted.prefab
+  uploadId: 817924

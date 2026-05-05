@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: d3f730ef6d6ec453eb8b718fe7ecd5aa
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads/Scripts/LinearObjectRules.cs
+  uploadId: 817924

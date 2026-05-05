@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 45a8c87f4e17cf74f9e8bc950fad47fd
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads/Content/Roads/Prefabs/Intersection
+    2 Lanes to 1 T.prefab
+  uploadId: 817924

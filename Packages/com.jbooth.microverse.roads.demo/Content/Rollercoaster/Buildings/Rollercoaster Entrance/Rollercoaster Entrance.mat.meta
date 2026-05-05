@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: a481a646dd3be1648a4a3d584ba04884
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads.demo/Content/Rollercoaster/Buildings/Rollercoaster
+    Entrance/Rollercoaster Entrance.mat
+  uploadId: 817924

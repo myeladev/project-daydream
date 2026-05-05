@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 5866ef8b7b6254769b71f3f2d7c4fa18
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 67d4904eef0dc43ab86c98a2532bae6e, type: 3}
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads/Scripts/Shaders/BetterShadersSource/ProceduralRoad.stackedshader
+  uploadId: 817924

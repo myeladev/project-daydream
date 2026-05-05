@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 65f91fb9a205d49eda06cd8813504f01
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads/Content/Roads/Material Templates/RoadDefault.mat
+  uploadId: 817924

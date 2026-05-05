@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c2a2fd9d6507c3e4ba2062cc03d92783
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads.demo/Content/Rollercoaster/Collections/Prefabs/Roads/Rollercoaster
+    Struts.prefab
+  uploadId: 817924

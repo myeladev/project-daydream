@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6ab57833129c78b46a69121f70a656fb
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads.demo/Content/Roads/Collections/Prefabs/Roads/Parking
+    Station.prefab
+  uploadId: 817924

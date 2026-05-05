@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6a5c213a163b5b84eade931cf0622607
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads.demo/Scenes/Roads Demo.unity
+  uploadId: 817924

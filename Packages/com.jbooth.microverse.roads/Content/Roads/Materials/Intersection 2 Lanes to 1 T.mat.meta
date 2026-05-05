@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: eb6a7a23775e8ca43ad4858f68fa8c68
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads/Content/Roads/Materials/Intersection
+    2 Lanes to 1 T.mat
+  uploadId: 817924

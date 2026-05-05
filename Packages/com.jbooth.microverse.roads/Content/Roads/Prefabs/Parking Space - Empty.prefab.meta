@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 70606c3dd08726f43bf5e80e82fed40a
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads/Content/Roads/Prefabs/Parking Space
+    - Empty.prefab
+  uploadId: 817924

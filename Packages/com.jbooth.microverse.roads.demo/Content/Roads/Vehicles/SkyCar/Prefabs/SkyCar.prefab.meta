@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5de7e91c9cb2476c8ba1eabd6f401ccf
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads.demo/Content/Roads/Vehicles/SkyCar/Prefabs/SkyCar.prefab
+  uploadId: 817924

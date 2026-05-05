@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4107e0581b2bb1640843d5c4b7eae12b
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads.demo/Content/Rollercoaster/Vehicles/Car.prefab
+  uploadId: 817924

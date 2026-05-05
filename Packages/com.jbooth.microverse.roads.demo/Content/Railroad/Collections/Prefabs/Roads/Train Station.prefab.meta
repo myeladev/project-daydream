@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a0cf65952d18ca146bce88c1577c07ed
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads.demo/Content/Railroad/Collections/Prefabs/Roads/Train
+    Station.prefab
+  uploadId: 817924

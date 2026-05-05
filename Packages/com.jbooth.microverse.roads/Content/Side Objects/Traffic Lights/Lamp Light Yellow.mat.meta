@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 430e678ed01e85e4e9f2b12548e195dc
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads/Content/Side Objects/Traffic Lights/Lamp
+    Light Yellow.mat
+  uploadId: 817924

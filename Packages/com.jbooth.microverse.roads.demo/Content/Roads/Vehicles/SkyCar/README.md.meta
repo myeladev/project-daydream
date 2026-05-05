@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 60c6d80e55ee450198327857e47bcfa3
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads.demo/Content/Roads/Vehicles/SkyCar/README.md
+  uploadId: 817924

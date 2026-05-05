@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 956202757e0afdd40a96484368390b99
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads/Content/Roads/Configs/Prefabs/Curb
+    Concrete-2L_LR.prefab
+  uploadId: 817924

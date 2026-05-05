@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 9967a70528004fd4a87ed49c6a30a43f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads.demo/Content/Rollercoaster/Rollercoaster
+    Rails/Rollercoaster.mat
+  uploadId: 817924

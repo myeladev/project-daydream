@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 3d8dc8fedc17e48d49123d7d492a4b55
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: ed1b96e11e9064957833ce8c01da6f92, type: 3}
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads/Scripts/Shaders/BetterShadersSource/ProceduralRoad_Base.surfshader
+  uploadId: 817924

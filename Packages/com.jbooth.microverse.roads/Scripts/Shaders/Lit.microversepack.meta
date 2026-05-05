@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: b1a35a24d3c6240ae991c8a7f28968dd
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: dd2402bfb00c5414ba1d8292f56d6034, type: 3}
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads/Scripts/Shaders/Lit.microversepack
+  uploadId: 817924

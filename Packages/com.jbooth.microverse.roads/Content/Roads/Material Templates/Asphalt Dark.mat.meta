@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: aca0914af27351e4fb4a4802ea21b49e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads/Content/Roads/Material Templates/Asphalt
+    Dark.mat
+  uploadId: 817924

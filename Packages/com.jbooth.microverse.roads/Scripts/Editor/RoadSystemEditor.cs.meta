@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: ce224a4d36e0f404d85c03ba7f92a719
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads/Scripts/Editor/RoadSystemEditor.cs
+  uploadId: 817924

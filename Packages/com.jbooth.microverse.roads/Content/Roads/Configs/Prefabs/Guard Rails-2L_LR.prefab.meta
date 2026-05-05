@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 75cf29b7a5bd3a24a87feee0fd455764
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads/Content/Roads/Configs/Prefabs/Guard
+    Rails-2L_LR.prefab
+  uploadId: 817924

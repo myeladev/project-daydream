@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 72f687fe8b11141eb9fc5550255081b8
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads/Content/Roads/Configs/Prefabs/Tunnel.prefab
+  uploadId: 817924

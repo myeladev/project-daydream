@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 3550fbaf2e677417387ac8ccf3ec8f25
+AssemblyDefinitionReferenceImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads/Scripts/Editor/MicroVerse-Roads.Editor.asmref
+  uploadId: 817924

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 83b9f755b47bcbd489328edc18128104
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads.demo/Scripts/JBooth.MicroVerseCore.Roads.Demo.asmdef
+  uploadId: 817924

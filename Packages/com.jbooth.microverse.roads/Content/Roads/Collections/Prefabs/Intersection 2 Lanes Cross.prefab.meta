@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 723f066171e7048e8858389eb4f5dbdf
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads/Content/Roads/Collections/Prefabs/Intersection
+    2 Lanes Cross.prefab
+  uploadId: 817924

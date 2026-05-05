@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 871d912beda217f48a0ce68f522500c1
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads/Content/Side Objects/Traffic Cones/Traffic
+    Cone.prefab
+  uploadId: 817924

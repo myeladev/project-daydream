@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 447c57f92bf782d4883e3d543ce7d045
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads.demo/Content/Railroad/Railroad
+    Tracks/Railroad Tracks.prefab
+  uploadId: 817924

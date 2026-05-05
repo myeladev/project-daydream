@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 70fc5fc8d20460b4580adc2512885db2
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads/Content/Roads/Collections/Prefabs/Roads/Road
+    Block Concrete.prefab
+  uploadId: 817924

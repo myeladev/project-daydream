@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 583d857ce27070842825bafe2bc92e25
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads/Content/Roads/Materials/Parking
+    Space.mat
+  uploadId: 817924

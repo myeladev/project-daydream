@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c95a7d5d840e90c48be50787a42d7b0e
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208590
+  packageName: MicroVerse - Roads
+  packageVersion: 1.7.43
+  assetPath: Packages/com.jbooth.microverse.roads/Content/Side Objects/Fences/Mesh
+    Fence/Pole.prefab
+  uploadId: 817924
