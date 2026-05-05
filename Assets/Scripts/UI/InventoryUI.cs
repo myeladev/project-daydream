@@ -15,6 +15,8 @@ namespace ProjectDaydream.UI
         private InputAction _interactAction;
         private InputAction _dropAction;
         
+        private ContainerObject _openContainerObject;
+        
         [SerializeField] private ContainerGridUI pocketGrid;
         [SerializeField] private ContainerGridUI backpackGrid;
         /// <summary>
@@ -79,7 +81,8 @@ namespace ProjectDaydream.UI
         
         public void Refresh()
         {
-            focusContainerPanel.gameObject.SetActive(false);
+            focusContainerPanel.gameObject.SetActive(_openContainerObject);
+            if(_openContainerObject) focusContainerGrid.Init(_openContainerObject.ContainerGrid);
             _hoveredItemObject = null;
             
             pocketGrid.Refresh();
@@ -88,7 +91,7 @@ namespace ProjectDaydream.UI
 
         protected override void OnHide()
         {
-            
+            _openContainerObject = null;
         }
         protected override void OnHidden()
         {
@@ -97,6 +100,7 @@ namespace ProjectDaydream.UI
         
         public void ShowContainer(ContainerObject containerObject)
         {
+            _openContainerObject = containerObject;
             focusContainerGrid.Init(containerObject.ContainerGrid);
             focusContainerPanel.gameObject.SetActive(true);
         }

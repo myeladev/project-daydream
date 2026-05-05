@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using ProjectDaydream.Logic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 namespace ProjectDaydream.UI
@@ -75,7 +76,7 @@ namespace ProjectDaydream.UI
             // Raycast to UI elements underneath the cursor
             var pointer = new PointerEventData(EventSystem.current)
             {
-                position = Input.mousePosition
+                position = Mouse.current.position.ReadValue()
             };
 
             var raycastResults = new List<RaycastResult>();
@@ -89,7 +90,7 @@ namespace ProjectDaydream.UI
                 // Retrieve the InventoryCellUI that is not the current one
                 var hitCell = result.gameObject.GetComponent<ContainerCellUI>();
 
-                // If the component is found and it's not the current one
+                // If the component is found, and it's not the current one
                 if (hitCell != null && hitCell != this)
                 {
                     otherCell = hitCell;
