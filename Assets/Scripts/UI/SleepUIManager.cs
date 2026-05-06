@@ -10,7 +10,7 @@ namespace ProjectDaydream.UI
         [SerializeField]
         private TextMeshProUGUI timeText;
         [SerializeField]
-        private WeatherManager weatherManager;
+        private DayNightManager dayNightManager;
         [SerializeField]
         private RectTransform sleepBackgroundBar;
         [SerializeField]
@@ -26,7 +26,7 @@ namespace ProjectDaydream.UI
         private void Update()
         {
             _canvasGroup.alpha = false /*TODO:PlayerController.instance.isSleeping*/ ? 1f : 0f;
-            timeText.text = $"[{weatherManager.GetFriendlyTimeString()}]";
+            //timeText.text = $"[{weatherManager.GetFriendlyTimeString()}]";
             sleepFillBar.UpdateBar(100/*TODO:PlayerController.instance.sleep*/, 100, sleepBackgroundBar);
         }
     }

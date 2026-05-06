@@ -100,12 +100,12 @@ namespace ProjectDaydream.Core
             yield return new WaitForSeconds(1f);
             
             // Activate the new scenes
-            worldLoadOperation.allowSceneActivation = true;
             worldLoadOperation.completed += (operation) =>
             {
                 _activeWorldScene = UnityEngine.SceneManagement.SceneManager.GetSceneByName("World");
             };
             
+            worldLoadOperation.allowSceneActivation = true;
             gameplayObjects.ForEach(m => m.SetActive(false));
             mainMenuObjects.ForEach(m => m.SetActive(true));
             
