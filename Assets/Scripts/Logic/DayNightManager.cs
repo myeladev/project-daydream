@@ -41,7 +41,7 @@ namespace ProjectDaydream.Logic
         }
 
         private void Update() {
-            RotateSun();
+            RotateSunAndMoon();
             UpdateLightSettings();
             UpdateSkyBlend();
         }
@@ -78,9 +78,10 @@ namespace ProjectDaydream.Logic
             return Mathf.Lerp(startDegree, startDegree + 180, (float) percentage);
         }
         
-        private void RotateSun() {
+        private void RotateSunAndMoon() {
             var rotation = CalculateSunAngle();
             sun.transform.rotation = Quaternion.AngleAxis(rotation, Vector3.right);
+            moon.transform.rotation = Quaternion.AngleAxis(rotation + 180f, Vector3.right);
         }
     }
 }

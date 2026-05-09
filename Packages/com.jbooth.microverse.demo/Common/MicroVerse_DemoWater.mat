@@ -8,7 +8,10 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: MicroVerse_DemoWater
-  m_Shader: {fileID: -6465566751694194690, guid: bb4ab8cabd76a40e9a543fc0cc813385, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: bb4ab8cabd76a40e9a543fc0cc813385,
+    type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -17,6 +20,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -24,16 +28,31 @@ Material:
         m_Texture: {fileID: 2800000, guid: 18234d0dd8e148248a2b11f182e2519a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _FoamDistance: 20
-    - _MaxDepth: 5
+    - _MaxDepth: 7.98
     - _Metallic: 1
+    - _QueueControl: -1
+    - _QueueOffset: 0
     - _Smoothness: 1
     - _WaterSmoothness: 0.7
     m_Colors:
-    - _DepthColor: {r: 0.21226417, g: 0.26785716, b: 0.2830189, a: 0.85490197}
+    - _DepthColor: {r: 0.13563547, g: 0.20624186, b: 0.2264151, a: 1}
     - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
-    - _ShallowColor: {r: 0.24313727, g: 0.43109986, b: 0.4509804, a: 0.44705883}
+    - _ShallowColor: {r: 0, g: 0.1268819, b: 0.24528301, a: 0.44705883}
     - _WaterColor: {r: 0, g: 1, b: 0, a: 1}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1

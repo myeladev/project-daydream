@@ -1,5 +1,7 @@
 // Scripts/Editor/BootstrapSceneLoader.cs
 #if UNITY_EDITOR
+using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
@@ -12,16 +14,23 @@ namespace EditorTools
         private const string PersistentScene = "Assets/Scenes/PersistentScene.unity";
         private const string PrefKey = "PreviousScene";
 
+        private static readonly string[] scenesToLoadWithPersistentScene = new string[]
+        {
+            "World", "MainMenu", "LoadingScreen"
+        };
+
         static PersistentSceneLoader()
         {
-            EditorApplication.playModeStateChanged += OnPlayModeChanged;
+           EditorApplication.playModeStateChanged += OnPlayModeChanged;
         }
 
         private static void OnPlayModeChanged(PlayModeStateChange state)
         {
             if (state == PlayModeStateChange.ExitingEditMode)
             {
-                bool saved = EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
+                var activeScene = SceneManager.GetActiveScene().name;
+                if (scenesToLoadWithPersistentScene.All(m => m != activeScene)) return;
+                var saved = EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
 
                 if (!saved)
                 {
