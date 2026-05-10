@@ -1,4 +1,8 @@
 using System.Collections.Generic;
+using System.Linq;
+using NWH.Common.SceneManagement;
+using NWH.Common.Vehicles;
+using NWH.VehiclePhysics2;
 using ProjectDaydream.Core;
 using ProjectDaydream.DataPersistence;
 using ProjectDaydream.UI;
@@ -14,9 +18,11 @@ namespace ProjectDaydream.Logic
         public CharacterController character;
         public static PlayerController Instance;
         public Transform flashlightTransform;
+        public bool IsDriving => _activeVehicle is not null;
         
         [SerializeField] 
         private List<Light> flashlight = new();
+        private Vehicle _activeVehicle;
         private InputAction _moveAction;
         private InputAction _lookAction;
         private InputAction _jumpAction;
@@ -26,12 +32,12 @@ namespace ProjectDaydream.Logic
         private InputAction _cancelAction;
         private InputAction _flashlightAction;
         private InputAction _inventoryAction;
-        
+
         private void Awake()
         {
             Instance = this;
         }
-
+        
         private void Start()
         {
             _moveAction = InputSystem.actions.FindAction("Move");
@@ -63,11 +69,17 @@ namespace ProjectDaydream.Logic
             }
             
             // Handle exiting things
-            if (_cancelAction.WasPressedThisFrame() && Cursor.lockState == CursorLockMode.Locked)
+            if (_cancelAction.WasPressedThisFrame() && _activeVehicle is not null)
             {
-                //drivingVehicle?.Exit();
-                
-                //if (isSleeping) Wake();
+                var vc = FindAnyObjectByType<VehicleChanger>();
+                var exitPosition = _activeVehicle.transform.GetComponentsInChildren<Transform>()
+                    .FirstOrDefault(t => t.CompareTag(VehicleChanger.Instance.enterExitTag));
+                vc.ExitVehicle(_activeVehicle);
+                _activeVehicle = null;
+                if (exitPosition)
+                {
+                    character.Motor.SetPosition(exitPosition.position);
+                }
             }
                 
             // Handle flashlight control
@@ -103,6 +115,11 @@ namespace ProjectDaydream.Logic
             */
             
             HandleCharacterInput();
+        }
+
+        public void SetActiveVehicle(VehicleController controller)
+        {
+            _activeVehicle = controller;
         }
 
         private void LateUpdate()

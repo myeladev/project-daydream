@@ -1,10 +1,14 @@
 using System;
+using System.Linq;
 using ProjectDaydream.Data;
+using ProjectDaydream.DataPersistence;
+using ProjectDaydream.Objects.Furniture;
+using ProjectDaydream.SaveData;
 using UnityEngine;
 
 namespace ProjectDaydream.Logic
 {
-    public class TimeManager : MonoBehaviour
+    public class TimeManager : MonoBehaviour, IDataPersistence
     {
         [SerializeField]
         private TimeSettings settings;
@@ -36,5 +40,27 @@ namespace ProjectDaydream.Logic
         {
             return CurrentTime.ToString("HH:mm");
         }
+
+        public void LoadData(GameData data)
+        {
+            TimeManagerSaveData saveData = data.timeManager;
+            if (saveData == null || saveData.ticks == 0) return;
+
+            CurrentTime = new DateTime(saveData.ticks);
+            Debug.Log($"Loaded time: {CurrentTime}");
+        }
+
+        public void SaveData(ref GameData data)
+        {
+            data.timeManager = new TimeManagerSaveData() {
+                ticks = CurrentTime.Ticks
+            };
+        }
+    }
+    
+    [Serializable]
+    public class TimeManagerSaveData
+    {
+        public long ticks;
     }
 }

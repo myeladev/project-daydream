@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace ProjectDaydream.EditorTools
 {
+    #if UNITY_EDITOR
     public class FindMissingScripts : Editor
     {
         [MenuItem("Tools/Find Missing Scripts")]
@@ -27,4 +28,5 @@ namespace ProjectDaydream.EditorTools
             Debug.Log($"Search complete. Found {found} missing scripts.");
         }
     }
+    #endif
 }

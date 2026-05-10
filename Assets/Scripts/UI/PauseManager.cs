@@ -1,4 +1,5 @@
 using ProjectDaydream.Core;
+using ProjectDaydream.Logic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -28,7 +29,7 @@ namespace ProjectDaydream.UI
 
         private void Update()
         {
-            if (_pauseAction.WasPressedThisFrame() && !SceneManager.Instance.IsInMainMenu)
+            if (_pauseAction.WasPressedThisFrame() && !SceneManager.Instance.IsInMainMenu && !PlayerController.Instance.IsDriving)
             {
                 if (!isPaused)
                 {

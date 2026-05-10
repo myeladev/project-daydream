@@ -1,14 +1,5 @@
 fileFormatVersion: 2
 guid: bc64a64f2888b1942b9b64877d834931
-MonoImporter:
-  externalObjects: {}
-  serializedVersion: 2
-  defaultReferences: []
-  executionOrder: 0
-  icon: {instanceID: 0}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
   productId: 166252
@@ -16,3 +7,12 @@ AssetOrigin:
   packageVersion: 13.6
   assetPath: Assets/NWH/Common/Scripts/Scene/VehicleChanger.cs
   uploadId: 762324
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: -1
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

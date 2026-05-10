@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6329122379947786776}
   - component: {fileID: 5962943835428919643}
+  - component: {fileID: 7207605566672588644}
   m_Layer: 0
   m_Name: TimeManager
   m_TagString: Untagged
@@ -46,6 +47,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjectDaydream.Logic.TimeManager
   settings: {fileID: 11400000, guid: 1fa06741e8d27ee4b82832014ffc9f2f, type: 2}
+--- !u!114 &7207605566672588644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2639480548065529454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed7520b54a4ac1c428977764046864eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectDaydream.SaveData.SaveAgent
+  id: 
 --- !u!1 &2763167108491814589
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,9 +319,9 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   maxSunIntensity: 1
-  maxMoonIntensity: 0.5
+  maxMoonIntensity: 0.07
   dayAmbientLight: {r: 1, g: 1, b: 1, a: 0}
-  nightAmbientLight: {r: 0.49315128, g: 0.4793966, b: 0.764151, a: 0}
+  nightAmbientLight: {r: 0.7054553, g: 0.6933962, b: 0.9245283, a: 0}
   volume: {fileID: 4041414377505763847}
   skyboxMaterial: {fileID: 2100000, guid: 1e0e3f1b75f2c0f4ca765fdff6a91d01, type: 2}
   timeManager: {fileID: 5962943835428919643}

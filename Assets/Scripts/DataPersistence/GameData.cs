@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ProjectDaydream.Logic;
 using ProjectDaydream.Objects.Furniture;
 using ProjectDaydream.Objects.Items;
 
@@ -9,6 +10,7 @@ namespace ProjectDaydream.DataPersistence
     public class GameData
     {
         public PlayerSaveData player;
+        public TimeManagerSaveData timeManager;
         public List<PropSaveData> props = new ();
         public List<FurnitureSaveData> furniture = new ();
     }

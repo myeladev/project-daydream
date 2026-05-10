@@ -26,7 +26,7 @@ namespace ProjectDaydream.Objects.Items
         private Vector3 _originalPosition;
         private Quaternion _originalRotation;
 
-        protected void Awake()
+        protected virtual void Awake()
         {
             Rigidbody = GetComponent<Rigidbody>();
             _originalPosition = transform.position;
