@@ -75,6 +75,7 @@ namespace ProjectDaydream.Logic
                 var exitPosition = _activeVehicle.transform.GetComponentsInChildren<Transform>()
                     .FirstOrDefault(t => t.CompareTag(VehicleChanger.Instance.enterExitTag));
                 vc.ExitVehicle(_activeVehicle);
+                character.TransitionToState(CharacterState.Default);
                 _activeVehicle = null;
                 if (exitPosition)
                 {
@@ -83,7 +84,7 @@ namespace ProjectDaydream.Logic
             }
                 
             // Handle flashlight control
-            if (_flashlightAction.WasPressedThisFrame() && Cursor.lockState == CursorLockMode.Locked)
+            if (_flashlightAction.WasPressedThisFrame() && Cursor.lockState == CursorLockMode.Locked && !_activeVehicle)
             {
                 foreach (var fLight in flashlight)
                 {
@@ -119,6 +120,7 @@ namespace ProjectDaydream.Logic
 
         public void SetActiveVehicle(VehicleController controller)
         {
+            character.TransitionToState(CharacterState.Driving);
             _activeVehicle = controller;
         }
 

@@ -12,6 +12,7 @@ namespace ProjectDaydream.Logic
         Climbing,
         Swimming,
         Sitting,
+        Driving
     }
 
     public enum ClimbingState
@@ -333,6 +334,8 @@ namespace ProjectDaydream.Logic
 
                     _moveInputVector = inputs.CameraRotation * moveInputVector;
                     _lookInputVector = cameraPlanarDirection;
+                    break;
+                case CharacterState.Driving:
                     break;
             }
         }

@@ -65,10 +65,8 @@ namespace ProjectDaydream.Objects.Items
 
         protected virtual void LoadFromSaveData(PropSaveData saveData)
         {
-            transform.SetPositionAndRotation(
-                new Vector3(saveData.position[0], saveData.position[1], saveData.position[2]),
-                Quaternion.Euler(saveData.rotation[0], saveData.rotation[1], saveData.rotation[2])
-            );
+            transform.position = new Vector3(saveData.position[0], saveData.position[1], saveData.position[2]);
+            transform.rotation = Quaternion.Euler(saveData.rotation[0], saveData.rotation[1], saveData.rotation[2]);
         }
 
         public void SaveData(ref GameData data)
