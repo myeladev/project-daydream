@@ -1320,11 +1320,11 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1138982546292674909}
   serializedVersion: 5
-  m_Mass: 1210
+  m_Mass: 3000
   m_LinearDamping: 0
   m_AngularDamping: 0
   m_CenterOfMass: {x: -0.000000011160083, y: 0.5031619, z: -0.10468035}
-  m_InertiaTensor: {x: 1819.04, y: 1769, z: 388.04}
+  m_InertiaTensor: {x: 1834.1989, y: 1783.7417, z: 391.27368}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1702,8 +1702,8 @@ MonoBehaviour:
       outputNameHash: 997106618
       biasAB: 0.5
       powerStiffness: 1
-      coastStiffness: 0.5
-      slipTorque: 100
+      coastStiffness: 1
+      slipTorque: 200
       differentialSteering: 0
       outputBNameHash: 1557298692
     - name: CenterDiff
@@ -1716,10 +1716,10 @@ MonoBehaviour:
       outputInertia: 0
       inputNameHash: -1471968074
       outputNameHash: 1746687998
-      biasAB: 1
+      biasAB: 0.5
       powerStiffness: 1
-      coastStiffness: 0.5
-      slipTorque: 300
+      coastStiffness: 1
+      slipTorque: 200
       differentialSteering: 0
       outputBNameHash: 1448263305
     - name: Rear Diff
@@ -1734,8 +1734,8 @@ MonoBehaviour:
       outputNameHash: -26630234
       biasAB: 0.5
       powerStiffness: 1
-      coastStiffness: 0.5
-      slipTorque: 300
+      coastStiffness: 1
+      slipTorque: 200
       differentialSteering: 0
       outputBNameHash: 533561840
     engine:
@@ -2159,17 +2159,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 818177d2061f4558b66bee63b4cc78f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useDefaultMass: 1
+  useDefaultMass: 0
   useMassAffectors: 0
-  baseMass: 1210
-  combinedMass: 1210
+  baseMass: 3000
+  combinedMass: 3000
   dimensions: {x: 1.3, y: 1.48, z: 4}
   useDefaultCenterOfMass: 0
   centerOfMass: {x: -0.000000011160083, y: 0.5031619, z: -0.10468035}
   combinedCenterOfMass: {x: -0.000000011160083, y: 0.5031619, z: -0.10468035}
   useDefaultInertia: 0
-  inertiaTensor: {x: 1819.04, y: 1769, z: 388.04}
-  combinedInertiaTensor: {x: 1819.04, y: 1769, z: 388.04}
+  inertiaTensor: {x: 1834.1989, y: 1783.7417, z: 391.27368}
+  combinedInertiaTensor: {x: 1834.1989, y: 1783.7417, z: 391.27368}
 --- !u!114 &6921650504439022358
 MonoBehaviour:
   m_ObjectHideFlags: 0

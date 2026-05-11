@@ -24,7 +24,7 @@ MonoBehaviour:
   particleMaxAlpha: 0.7
   maxParticleLifetime: 0
   particleLifeDistance: 10
-  frictionPreset: {fileID: 11400000, guid: f550961d8fc79d84abd7ca194acc766d, type: 2}
+  frictionPreset: {fileID: 11400000, guid: 935347efafd41d4408543d5ce8339437, type: 2}
   rollingResistanceMaxMultiplier: 1.4
   name: Grass
   skidSoundClip: {fileID: 0}

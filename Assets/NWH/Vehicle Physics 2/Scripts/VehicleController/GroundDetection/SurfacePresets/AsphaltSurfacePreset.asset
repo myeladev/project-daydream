@@ -24,7 +24,7 @@ MonoBehaviour:
   particleMaxAlpha: 0.875
   maxParticleLifetime: 5
   particleLifeDistance: 25
-  frictionPreset: {fileID: 11400000, guid: 935347efafd41d4408543d5ce8339437, type: 2}
+  frictionPreset: {fileID: 11400000, guid: 8fa8a2c6069c00541aa092e84e007c73, type: 2}
   rollingResistanceMaxMultiplier: 1
   name: Asphalt
   skidSoundClip: {fileID: 8300000, guid: 23786ba668590b8418f6771116dbaf09, type: 3}

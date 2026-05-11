@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - PlayerSpawn
+  - Vehicle
+  - Wheel
+  - EnterExitPoint
+  - Road
   layers:
   - Default
   - TransparentFX

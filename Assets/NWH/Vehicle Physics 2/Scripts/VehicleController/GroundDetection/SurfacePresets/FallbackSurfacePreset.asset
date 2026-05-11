@@ -24,18 +24,19 @@ MonoBehaviour:
   particleMaxAlpha: 0.8
   maxParticleLifetime: 0
   particleLifeDistance: 10
-  frictionPreset: {fileID: 11400000, guid: 21211030b85d8a44190f2a36324ef00e, type: 2}
+  frictionPreset: {fileID: 11400000, guid: 8fa8a2c6069c00541aa092e84e007c73, type: 2}
+  rollingResistanceMaxMultiplier: 1
   name: Fallback/Default
-  skidSoundClip: {fileID: 8300000, guid: 54bbc60051d16904d9fa34c6fff4b874, type: 3}
+  skidSoundClip: {fileID: 8300000, guid: 23786ba668590b8418f6771116dbaf09, type: 3}
   playSkidSounds: 1
-  skidSoundPitch: 0.65
-  skidSoundVolume: 0
+  skidSoundPitch: 1
+  skidSoundVolume: 0.6
   slipFactor: 1
-  slipSensitiveSurfaceSound: 0
+  slipSensitiveSurfaceSound: 1
   playSurfaceSounds: 1
   surfaceSoundClip: {fileID: 8300000, guid: 77d6eaeb41d727a4681a2cc8654c60b2, type: 3}
   surfaceSoundPitch: 1
-  surfaceSoundVolume: 0
+  surfaceSoundVolume: 0.25
   drawSkidmarks: 1
-  skidmarkMaterial: {fileID: 2100000, guid: 0a47dd039b84a104aae3d86a9befdf3f, type: 2}
+  skidmarkMaterial: {fileID: 2100000, guid: ca984932f6957a744bdc716a2ac03220, type: 2}
   skidmarkBaseIntensity: 0
