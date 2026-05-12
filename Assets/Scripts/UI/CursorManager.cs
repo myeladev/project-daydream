@@ -103,7 +103,7 @@ namespace ProjectDaydream.UI
                 }
 
                 if (_interactAction.WasPressedThisFrame() && !optionsPanel.IsViewingOptions) _interactable.Interact(interactStrings[0], InteractContext.Default);
-                if (_inspectAction.WasPressedThisFrame())
+                if (_inspectAction.WasPressedThisFrame() && InteractController.Instance.CanInteract)
                 {
                     ShowInteractOptions(optionsPanel.IsViewingOptions ? null : _interactable);
                 }
