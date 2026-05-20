@@ -1,4 +1,3 @@
-using System;
 using ProjectDaydream.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,7 +9,6 @@ namespace ProjectDaydream.Logic
         public Camera cam;
         public float spring = 800f;
         public float damper = 60f;
-        public float maxDistance = 0.05f;
 
         private Rigidbody _anchorRb; // kinematic proxy that follows the mouse
         private ConfigurableJoint _joint;
@@ -46,7 +44,7 @@ namespace ProjectDaydream.Logic
         void Update()
         {
             var ray = new Ray(cam.transform.position, cam.transform.forward);
-            if (_grabAction.WasPerformedThisFrame() && !OptionsUI.Instance.IsViewingOptions)
+            if (_grabAction.WasPerformedThisFrame() && (!OptionsUI.Instance?.IsViewingOptions ?? false))
             {
                 if (Physics.Raycast(ray, out var hit, 1000f) && hit.rigidbody)
                 {
@@ -61,7 +59,7 @@ namespace ProjectDaydream.Logic
                     _joint.anchor = hit.rigidbody.transform.InverseTransformPoint(hit.point);
                     _joint.connectedAnchor = Vector3.zero;
 
-                    var jointDrive = new JointDrive() { positionSpring = spring, positionDamper = damper, maximumForce = (float)6e4 };
+                    var jointDrive = new JointDrive() { positionSpring = spring, positionDamper = damper, maximumForce = float.MaxValue };
                     _joint.xDrive = jointDrive;
                     _joint.yDrive = jointDrive;
                     _joint.zDrive = jointDrive;
@@ -73,7 +71,7 @@ namespace ProjectDaydream.Logic
                     _joint.linearLimit = new SoftJointLimit() { limit = 0.03f };
                     _joint.projectionMode = JointProjectionMode.PositionAndRotation;
                     
-                    _joint.breakForce = 50000;
+                    _joint.breakForce = float.MaxValue;
 
                     // extra stability
                     //hit.rigidbody.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;

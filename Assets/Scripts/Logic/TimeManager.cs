@@ -16,9 +16,21 @@ namespace ProjectDaydream.Logic
 
         public TimeSpan SunriseTime { get; private set; }
         public TimeSpan SunsetTime { get; private set; }
+        public static TimeManager Instance { get; private set; }
+
+        private DateTime StartDate => new DateTime(settings.startingYear, settings.startingMonth, settings.startingDay,
+            settings.startingHour, settings.startingMinute, 0);
+        
 
         private void Awake()
         {
+            if (Instance)
+            {
+                Destroy(gameObject);
+                return;
+            }
+            Instance = this;
+            
             if (settings == null)
             {
                 Debug.LogError("No time settings were found.");
@@ -55,6 +67,11 @@ namespace ProjectDaydream.Logic
             data.timeManager = new TimeManagerSaveData() {
                 ticks = CurrentTime.Ticks
             };
+        }
+
+        public int GetDay()
+        {
+            return (CurrentTime - StartDate).Days + 1;
         }
     }
     

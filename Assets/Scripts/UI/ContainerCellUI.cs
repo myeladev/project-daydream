@@ -19,30 +19,20 @@ namespace ProjectDaydream.UI
             this.ContainerGrid = containerGrid;
             this.x = x;
             this.y = y;
+            UpdateVisual(ContainerGrid.GetItemAt(x, y)?.ItemDefinition);
         }
 
-        public void UpdateVisual(Item item)
+        public void UpdateVisual(ItemDefinition itemDefinition)
         {
-            if (item && item.icon)
+            if (itemDefinition && itemDefinition.icon)
             {
                 iconImage.enabled = true;
-                iconImage.sprite = item.icon;
+                iconImage.sprite = itemDefinition.icon;
             }
             else
             {
                 iconImage.enabled = false;
             }
-        }
-
-        public void Refresh()
-        {
-            GetComponent<Image>().raycastTarget = true;
-        }
-        
-        public void Clear()
-        {
-            iconImage.sprite = null;
-            iconImage.enabled = false;
         }
         
         private Vector3 startPosition;

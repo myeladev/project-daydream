@@ -4,15 +4,15 @@ namespace ProjectDaydream.Logic
 {
     public class ContainerGridItem
     {
-        public Item Item;
-        public Sprite Icon => Item.icon;
+        public ItemDefinition ItemDefinition;
+        public Sprite Icon => ItemDefinition.icon;
 
         // Reference to where it's placed
         public Vector2Int Position;
 
-        public ContainerGridItem(Item item)
+        public ContainerGridItem(ItemDefinition itemDefinition)
         {
-            Item = item;
+            ItemDefinition = itemDefinition;
         }
     }
 }

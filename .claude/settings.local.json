@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\jackt\\\\project-daydream\\\\Assets\\\\Scripts\" -Filter \"*Item*\" -Recurse)",
+      "Bash(Select-Object -Property FullName)",
+      "Bash(Format-Table -AutoSize)"
+    ]
+  }
+}

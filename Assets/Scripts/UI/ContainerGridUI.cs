@@ -44,5 +44,7 @@ namespace ProjectDaydream.UI
                 }
             }
         }
+        
+        public List<ContainerCellUI> GetCells() => _cells;
     }
 }

@@ -13,6 +13,7 @@ namespace EditorTools
     {
         private const string PersistentScene = "Assets/Scenes/PersistentScene.unity";
         private const string PrefKey = "PreviousScene";
+        private const string ShouldLoadPrefKey = "ShouldLoadLastScene";
 
         private static readonly string[] scenesToLoadWithPersistentScene = new string[]
         {
@@ -29,7 +30,11 @@ namespace EditorTools
             if (state == PlayModeStateChange.ExitingEditMode)
             {
                 var activeScene = SceneManager.GetActiveScene().name;
-                if (scenesToLoadWithPersistentScene.All(m => m != activeScene)) return;
+                if (scenesToLoadWithPersistentScene.All(m => m != activeScene))
+                {
+                    SessionState.SetString(ShouldLoadPrefKey, "false");
+                    return;
+                }
                 var saved = EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
 
                 if (!saved)
@@ -41,6 +46,7 @@ namespace EditorTools
 
                 // Save current scene so we can return to it
                 SessionState.SetString(PrefKey, SceneManager.GetActiveScene().path);
+                SessionState.SetString(ShouldLoadPrefKey, "true");
 
                 // Redirect to bootstrap
                 if (SceneManager.GetActiveScene().path != PersistentScene)
@@ -52,6 +58,9 @@ namespace EditorTools
 
             if (state == PlayModeStateChange.EnteredEditMode)
             {
+                string shouldLoadLastScene = SessionState.GetString(ShouldLoadPrefKey, string.Empty);
+                if (shouldLoadLastScene == "false")
+                    return;
                 // Return to the scene you were working in
                 string previousScene = SessionState.GetString(PrefKey, string.Empty);
                 if (!string.IsNullOrEmpty(previousScene))

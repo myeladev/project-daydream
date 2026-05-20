@@ -1,4 +1,3 @@
-using System;
 using ProjectDaydream.Logic;
 using ProjectDaydream.Objects.Furniture;
 using ProjectDaydream.Objects.Items;
@@ -54,7 +53,7 @@ namespace ProjectDaydream
             HandleFurnitureMoving();
         }
 
-        private float holdingFurnitureDelay = 0f;
+        private float holdingFurnitureDelay;
         private void HandleFurnitureMoving()
         {
             holdingFurnitureDelay -= Time.deltaTime;
@@ -93,8 +92,8 @@ namespace ProjectDaydream
 
         private void SnapRotatedObjectToGround(Collider objectToSnap)
         {
-            Collider collider = objectToSnap;
-            Vector3 highestPoint = collider.bounds.max;
+            Collider objectCollider = objectToSnap;
+            Vector3 highestPoint = objectCollider.bounds.max;
             RaycastHit hit;
             var leeway = 0.01f;
             if (Physics.Raycast(highestPoint + (Vector3.up * leeway), Vector3.down, out hit, Mathf.Infinity, furnitureLayerMask))
@@ -128,7 +127,7 @@ namespace ProjectDaydream
                 {
                     if (Physics.Raycast(_camera.transform.position,
                             _camera.transform.TransformDirection(Vector3.forward),
-                            out var hit, FurniturePlacementRange, furnitureLayerMask))
+                            out _, FurniturePlacementRange, furnitureLayerMask))
                     {
                         movingFurniture.Place(furniturePlacementMarker.transform.position, furniturePlacementMarker.transform.rotation);
                         ReleaseHeldFurniture();
@@ -149,6 +148,6 @@ namespace ProjectDaydream
             furniturePlacementMarker.gameObject.SetActive(false);
         }
 
-        public bool CanClean() => _holdingItemObject?.canClean ?? false;
+        public bool CanClean() => _holdingItemObject?.itemDefinition.canClean ?? false;
     }
 }

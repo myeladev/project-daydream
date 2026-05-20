@@ -46,7 +46,8 @@ namespace ProjectDaydream.DataPersistence
                 profileName = profileName ?? currentGameMetaData.profileName,
                 createdDate = currentGameMetaData.createdDate,
                 gameVersion = Application.version,
-                lastSavedDate = DateTime.UtcNow.ToString(CultureInfo.InvariantCulture)
+                lastSavedDate = DateTime.UtcNow.ToString(CultureInfo.InvariantCulture),
+                day = TimeManager.Instance.GetDay()
             };
             
             fileManager.SaveProfileThumbnail(metaData.profileName, Utilities.SaveCameraView(Camera.main));
@@ -119,6 +120,7 @@ namespace ProjectDaydream.DataPersistence
                 createdDate = DateTime.UtcNow.ToString(CultureInfo.InvariantCulture),
                 lastSavedDate = DateTime.UtcNow.ToString(CultureInfo.InvariantCulture),
                 gameVersion = Application.version,
+                day = 1,
                 ambientMode = ambientMode
             };
 

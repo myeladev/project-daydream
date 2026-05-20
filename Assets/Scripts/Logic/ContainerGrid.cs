@@ -7,6 +7,7 @@ namespace ProjectDaydream.Logic
     {
         public int Width;
         public int Height;
+        public int Size => grid.Length;
         private ContainerGridItem[,] grid;
 
         public ContainerGrid(int width, int height)
@@ -68,6 +69,7 @@ namespace ProjectDaydream.Logic
 
             return false;
         }
+        
         
         public bool TryAddItem(ContainerGridItem item, int? x = null, int? y = null)
         {

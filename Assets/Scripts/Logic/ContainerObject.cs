@@ -15,14 +15,17 @@ namespace ProjectDaydream.Logic
         
         public ContainerGrid ContainerGrid;
         public bool IsInteractable => InteractController.Instance.CanInteract;
-        public new List<string> GetInteractOptions(InteractContext context)
+        public List<string> GetInteractOptions(InteractContext context)
         {
-            return context == InteractContext.Default ? 
-                new List<string>
-                {
-                    "Open",
-                }
-                : new List<string>();
+            // Get the base prop interactions
+            var interactList = new List<string>();//base.GetInteractOptions(context);
+
+            if (context == InteractContext.Default)
+            {
+                interactList.Add("Open");
+            }
+            
+            return interactList;
         }
         
         public new void Interact(string option, InteractContext context)

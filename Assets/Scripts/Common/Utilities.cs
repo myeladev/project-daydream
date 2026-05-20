@@ -29,14 +29,16 @@ namespace ProjectDaydream.Common
         
         public static Texture2D SaveCameraView(Camera cam)
         {
-            RenderTexture screenTexture = new RenderTexture(100, 100, 16);
+            var width = 160;
+            var height = 90;
+            RenderTexture screenTexture = new RenderTexture(width, height, 16);
             cam.targetTexture = screenTexture;
             RenderTexture.active = screenTexture;
             cam.Render();
             cam.targetTexture = null;
 
-            Texture2D renderedTexture = new Texture2D(100, 100);
-            renderedTexture.ReadPixels(new Rect(0, 0, 100, 100), 0, 0);
+            Texture2D renderedTexture = new Texture2D(width, height);
+            renderedTexture.ReadPixels(new Rect(0, 0, width, height), 0, 0);
             RenderTexture.active = null;
 
             return renderedTexture;

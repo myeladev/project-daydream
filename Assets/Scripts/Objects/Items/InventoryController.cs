@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using ProjectDaydream.Core;
 using ProjectDaydream.Logic;
 using ProjectDaydream.UI;
@@ -13,6 +12,9 @@ namespace ProjectDaydream.Objects.Items
         public static InventoryController Instance;
         
         private InputAction _inventoryAction;
+        private InputAction _cycleHotbarAction;
+        [HideInInspector]
+        public int selectedPocketIndex = 0;
         [SerializeField] private UIPanel inventoryMenu;
 
         private void Awake()
@@ -26,6 +28,7 @@ namespace ProjectDaydream.Objects.Items
                 Instance = this;
             }
             _inventoryAction = InputSystem.actions.FindAction("Inventory");
+            _cycleHotbarAction = InputSystem.actions.FindAction("CycleHotbar");
             Pockets = new ContainerGrid(8, 1);
         }
         
@@ -41,6 +44,13 @@ namespace ProjectDaydream.Objects.Items
                 {
                     GameplayUI.Instance.PushPanel(inventoryMenu);
                 }
+            }
+            
+            var cycleHotbar = _cycleHotbarAction.ReadValue<Vector2>();
+            if (cycleHotbar.y != 0)
+            {
+                Debug.Log(cycleHotbar);
+                selectedPocketIndex = (selectedPocketIndex - (int)cycleHotbar.y + Pockets.Size) % Pockets.Size;
             }
         }
         

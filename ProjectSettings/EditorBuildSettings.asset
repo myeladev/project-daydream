@@ -10,7 +10,7 @@ EditorBuildSettings:
     guid: 971a14db184a6f641967315518e97ec9
   - enabled: 1
     path: Assets/Scenes/World.unity
-    guid: 8124e5870f4fd4c779e7a5f994e84ad1
+    guid: 6664797506c7ee94994a260864ea2d55
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 67c2cf3a325bad84fabf31d0e5db0f2e,
       type: 3}

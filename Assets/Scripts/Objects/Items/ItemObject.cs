@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using ProjectDaydream.Common;
@@ -10,9 +9,8 @@ namespace ProjectDaydream.Objects.Items
 {
     public class ItemObject : Prop, IInteractable
     {
-        public Item item;
+        public ItemDefinition itemDefinition;
         private List<Collider> _colliders;
-        public bool canClean;
 
         protected new void Awake()
         {
@@ -43,7 +41,7 @@ namespace ProjectDaydream.Objects.Items
                     Rigidbody.linearVelocity = Vector3.zero;
                     break;
                 case "Pickup":
-                    var success = InventoryController.Instance.TryAddItem(new ContainerGridItem(item));
+                    var success = InventoryController.Instance.TryAddItem(new ContainerGridItem(itemDefinition));
 
                     if (!success)
                     {
