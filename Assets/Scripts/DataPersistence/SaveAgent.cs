@@ -1,9 +1,8 @@
-using System.Collections.Generic;
-using ProjectDaydream.DataPersistence;
+using ProjectDaydream.SaveData;
 using UnityEditor;
 using UnityEngine;
 
-namespace ProjectDaydream.SaveData
+namespace ProjectDaydream.DataPersistence
 {
     [DisallowMultipleComponent]
     public class SaveAgent : MonoBehaviour
@@ -12,13 +11,19 @@ namespace ProjectDaydream.SaveData
 
         public void SaveData(ref GameData gameData)
         {
-            var saveTarget = GetComponent<IDataPersistence>();
-            saveTarget?.SaveData(ref gameData);
+            var saveTargets = GetComponents<IDataPersistence>();
+            foreach (var saveTarget in saveTargets)
+            {
+                saveTarget.SaveData(ref gameData);
+            }
         }
         public void LoadData(GameData gameData)
         {
-            var saveTarget = GetComponent<IDataPersistence>();
-            saveTarget?.LoadData(gameData);
+            var saveTargets = GetComponents<IDataPersistence>();
+            foreach (var saveTarget in saveTargets)
+            {
+                saveTarget.LoadData(gameData);
+            }
         }
         
 #if UNITY_EDITOR

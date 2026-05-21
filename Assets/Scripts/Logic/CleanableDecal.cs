@@ -5,7 +5,7 @@ using UnityEngine.Rendering.Universal;
 namespace ProjectDaydream.Logic
 {
     [RequireComponent(typeof(DecalProjector))]
-    public class CleanableDecal : MonoBehaviour, IInteractable
+    public class CleanableDecal : MonoBehaviour, IInteractionProvider
     {
         private DecalProjector projector;
 

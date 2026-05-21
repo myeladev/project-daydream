@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace ProjectDaydream.Objects.Items
 {
-    public class Prop : MonoBehaviour, IInteractable, IDataPersistence
+    public class Prop : MonoBehaviour, IInteractionProvider, IDataPersistence
     {
         public bool IsInteractable => InteractController.Instance.CanInteract;
 

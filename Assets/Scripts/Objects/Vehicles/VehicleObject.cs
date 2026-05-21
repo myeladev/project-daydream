@@ -6,7 +6,7 @@ using ProjectDaydream.Objects.Items;
 
 namespace ProjectDaydream.Objects.Vehicles
 {
-    public class VehicleObject : Prop, IInteractable
+    public class VehicleObject : Prop, IInteractionProvider
     {
         private VehicleController controller;
 

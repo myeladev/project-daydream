@@ -2,6 +2,7 @@ using System;
 using DG.Tweening;
 using ProjectDaydream.Core;
 using ProjectDaydream.Logic;
+using ProjectDaydream.Objects;
 using ProjectDaydream.Objects.Furniture;
 using TMPro;
 using UnityEngine;
@@ -40,7 +41,7 @@ namespace ProjectDaydream.UI
             _inspectAction = InputSystem.actions.FindAction("Inspect");
         }
 
-        private IInteractable _interactable;
+        private Interactable interactable;
         private void Update()
         {
             if (SceneManager.Instance.IsInMainMenu)
@@ -56,12 +57,12 @@ namespace ProjectDaydream.UI
                 cursorImage.enabled = false;
                 return;
             }
-            var oldInteractable = _interactable;
-            _interactable = CheckInteractables();
+            var oldInteractable = interactable;
+            interactable = CheckInteractables();
 
             var cursorTweenDuration = 0.1f;
             // If the cursor has moved off of an interactable
-            if (oldInteractable is not null && _interactable is null)
+            if (oldInteractable is not null && interactable is null)
             {
                 cursorImage.transform.DOScale(new Vector3(1f, 1f, 1f), cursorTweenDuration)
                     .SetEase(Ease.Linear);
@@ -69,7 +70,7 @@ namespace ProjectDaydream.UI
                     .SetEase(Ease.Linear);
             }
             // If the cursor has moved over an interactable
-            else if (oldInteractable is null && _interactable is not null)
+            else if (oldInteractable is null && interactable is not null)
             {
                 cursorImage.transform.DOScale(new Vector3(1.75f, 1.75f, 1f), cursorTweenDuration)
                     .SetEase(Ease.Linear);
@@ -77,17 +78,22 @@ namespace ProjectDaydream.UI
                     .SetEase(Ease.Linear);
             }
 
-            interactText.enabled = _interactable is not null;
+            interactText.enabled = interactable is not null;
             interactText.text = "";
 
-            if (_interactable is Furniture furniture && furniture.seatingAnchor == PlayerController.Instance.character.ActiveSeatingAnchor)
+            if (interactable)
             {
-                return;
+                var furniture = interactable.GetComponent<Furniture>();
+                
+                if (furniture && furniture.seatingAnchor == PlayerController.Instance.character.ActiveSeatingAnchor)
+                {
+                    return;
+                }
             }
 
-            if (_interactable is not null)
+            if (interactable is not null)
             {
-                var interactStrings = _interactable.GetInteractOptions(InteractContext.Default);
+                var interactStrings = interactable.GetInteractOptions(InteractContext.Default);
 
                 if (!optionsPanel.IsViewingOptions)
                 {
@@ -102,31 +108,32 @@ namespace ProjectDaydream.UI
                     interactText.text = "";
                 }
 
-                if (_interactAction.WasPressedThisFrame() && !optionsPanel.IsViewingOptions) _interactable.Interact(interactStrings[0], InteractContext.Default);
+                if (_interactAction.WasPressedThisFrame()) Debug.Log("Interact");
+                if (_interactAction.WasPressedThisFrame() && !optionsPanel.IsViewingOptions) interactable.Interact(interactStrings[0], InteractContext.Default);
                 if (_inspectAction.WasPressedThisFrame() && InteractController.Instance.CanInteract)
                 {
-                    ShowInteractOptions(optionsPanel.IsViewingOptions ? null : _interactable);
+                    ShowInteractOptions(optionsPanel.IsViewingOptions ? null : interactable);
                 }
             }
         }
 
-        private IInteractable CheckInteractables()
+        private Interactable CheckInteractables()
         {
             if (Physics.Raycast(_camera.transform.position, _camera.transform.TransformDirection(Vector3.forward),
                     out var hit, InteractRange))
             {
-                var interactable = hit.transform.GetComponent<IInteractable>();
+                var interactable = hit.transform.GetComponent<Interactable>();
                 
-                if (interactable?.IsInteractable ?? false) return interactable;
+                if (interactable?.isInteractable ?? false) return interactable;
             }
 
             return null;
         }
 
         [SerializeField] private OptionsUI optionsPanel;
-        private void ShowInteractOptions(IInteractable interactable)
+        private void ShowInteractOptions(Interactable target)
         {
-            optionsPanel.Open(interactable);
+            optionsPanel.Open(target);
         }
     }
 

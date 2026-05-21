@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace ProjectDaydream.Objects.Items
 {
-    public class ItemObject : Prop, IInteractable
+    public class ItemObject : Prop, IInteractionProvider
     {
         public ItemDefinition itemDefinition;
         private List<Collider> _colliders;

@@ -45,9 +45,9 @@ namespace ProjectDaydream.UI
         {
             if (_hoveredItemObject && GameplayUI.Instance.IsPanelActive(this))
             {
-                IInteractable interactable = _hoveredItemObject;
-                if (_interactAction.WasPressedThisFrame()) interactable.Interact("Use", InteractContext.Inventory);
-                if (_dropAction.WasPressedThisFrame()) interactable.Interact("Drop", InteractContext.Inventory);
+                IInteractionProvider interactionProvider = _hoveredItemObject;
+                if (_interactAction.WasPressedThisFrame()) interactionProvider.Interact("Use", InteractContext.Inventory);
+                if (_dropAction.WasPressedThisFrame()) interactionProvider.Interact("Drop", InteractContext.Inventory);
             }
         }
 

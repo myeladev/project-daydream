@@ -5,7 +5,7 @@ using ProjectDaydream.UI;
 
 namespace ProjectDaydream.Objects
 {
-    public class DoorObject : Prop, IInteractable
+    public class DoorObject : Prop, IInteractionProvider
     {
         public bool shut;
         public bool locked;

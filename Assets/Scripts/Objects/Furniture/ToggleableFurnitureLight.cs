@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace ProjectDaydream.Objects.Furniture
 {
-    public class ToggleableFurnitureLight : Furniture, IInteractable
+    public class ToggleableFurnitureLight : Furniture, IInteractionProvider
     {
         [SerializeField]
         private List<Light> lights = new();

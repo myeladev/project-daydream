@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ProjectDaydream.Objects
 {
-    public class ElevatorButton : MonoBehaviour, IInteractable
+    public class ElevatorButton : MonoBehaviour, IInteractionProvider
     {
         public ElevatorStation targetStation;
         private Light _buttonLight;

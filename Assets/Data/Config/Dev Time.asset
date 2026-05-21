@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 294d9c8319ed40099065e6b514599904, type: 3}
   m_Name: Dev Time
   m_EditorClassIdentifier: Assembly-CSharp::ProjectDaydream.Data.TimeSettings
-  timeMultiplier: 400
+  timeMultiplier: 41
   startingDay: 24
   startingMonth: 8
   startingYear: 2054

@@ -4,7 +4,7 @@ using ProjectDaydream.UI;
 
 namespace ProjectDaydream.Objects.Furniture
 {
-    public class Bed : Furniture, IInteractable
+    public class Bed : Furniture, IInteractionProvider
     {
         public new List<string> GetInteractOptions(InteractContext context)
         {

@@ -5,6 +5,8 @@ Shader "Skybox/NightDay Cubemap"
         _Tex1("Cubemap 1", Cube) = "white" {}
         _Tex2("Cubemap 2", Cube) = "white" {}
         _Blend("Blend", Range(0, 1)) = 0.5
+        _Rotation("Rotation", Range(0, 360)) = 0
+        _RotationAxis("Rotation Axis", Vector) = (0, 1, 0, 0)
     }
     SubShader
     {
@@ -30,22 +32,34 @@ Shader "Skybox/NightDay Cubemap"
             samplerCUBE _Tex1;
             samplerCUBE _Tex2;
             float       _Blend;
+            float       _Rotation;
+            float4 _RotationAxis;
+
+            float3 RotateAroundAxis(float3 dir, float3 axis, float degrees)
+            {
+                float rad = degrees * (UNITY_PI / 180.0);
+                float sinR, cosR;
+                sincos(rad, sinR, cosR);
+                axis = normalize(axis);
+
+                // Rodrigues' rotation formula
+                return dir * cosR
+                     + cross(axis, dir) * sinR
+                     + axis * dot(axis, dir) * (1 - cosR);
+            }
 
             v2f vert(appdata v)
             {
                 v2f o;
-                o.texcoord = v.vertex.xyz;
+                o.texcoord = RotateAroundAxis(v.vertex.xyz, _RotationAxis.xyz, _Rotation);
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 return o;
             }
 
             fixed4 frag(v2f i) : SV_Target
             {
-                // Sample both cubemaps directly using the vertex direction
                 fixed4 colorTex1 = texCUBE(_Tex1, i.texcoord);
                 fixed4 colorTex2 = texCUBE(_Tex2, i.texcoord);
-
-                // Blend the two colors
                 return lerp(colorTex1, colorTex2, _Blend);
             }
             ENDCG

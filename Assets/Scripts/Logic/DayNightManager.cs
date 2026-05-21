@@ -44,12 +44,30 @@ namespace ProjectDaydream.Logic
             RotateSunAndMoon();
             UpdateLightSettings();
             UpdateSkyBlend();
+            UpdateSkyRotation();
         }
 
         private void UpdateSkyBlend() {
             float dotProduct = Vector3.Dot(sun.transform.forward, Vector3.up);
             float blend = Mathf.Lerp(0, 1, lightIntensityCurve.Evaluate(dotProduct));
             skyboxMaterial.SetFloat("_Blend", blend);
+        }
+        
+        private void UpdateSkyRotation() {
+            float dayFraction = (float)TimeManager.Instance.CurrentTime.TimeOfDay.TotalSeconds / 86400f;
+            // Rotate skybox - adjust speed to taste
+            float skyRotation = Mathf.Repeat(dayFraction * 360f, 360f);
+            RenderSettings.skybox.SetFloat("_Rotation", skyRotation);
+            
+            // TODO: This does work but we need a better cubemap that supports an offset angle
+            // OR we separate stars/clouds from the skybox and rotate them separately
+            /*
+            float latitudeDeg = 37.5f;
+            float latitudeRad = latitudeDeg * Mathf.Deg2Rad;
+            Vector4 axis = new Vector4(Mathf.Cos(latitudeRad), Mathf.Sin(latitudeRad), 0f, 0f);
+            RenderSettings.skybox.SetVector("_RotationAxis", axis);
+            */
+            RenderSettings.skybox.SetVector("_RotationAxis", new Vector4(0, 90, 0, 0));
         }
         
         private void UpdateLightSettings() {

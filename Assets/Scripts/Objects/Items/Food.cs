@@ -4,7 +4,7 @@ using ProjectDaydream.UI;
 
 namespace ProjectDaydream.Objects.Items
 {
-    public class Food : ItemObject, IInteractable
+    public class Food : ItemObject, IInteractionProvider
     {
         public float hungerRestoration;
         

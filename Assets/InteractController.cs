@@ -12,7 +12,7 @@ namespace ProjectDaydream
         public static InteractController Instance;
         
         public bool IsHoldingProp => _holdingProp is not null;
-        public bool CanInteract => !IsHoldingProp && !movingFurniture;
+        public bool CanInteract => !IsHoldingProp && !movingFurniture && !player.IsDriving;
 
         [Header("Misc")]
         [SerializeField]

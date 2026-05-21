@@ -46,7 +46,7 @@ namespace ProjectDaydream.Logic
             var ray = new Ray(cam.transform.position, cam.transform.forward);
             if (_grabAction.WasPerformedThisFrame() && (!OptionsUI.Instance?.IsViewingOptions ?? false))
             {
-                if (Physics.Raycast(ray, out var hit, 1000f) && hit.rigidbody)
+                if (Physics.Raycast(ray, out var hit, 3f) && hit.rigidbody)
                 {
                     _grabDistance = hit.distance;
                     _anchorRb.position = hit.point;
@@ -71,7 +71,7 @@ namespace ProjectDaydream.Logic
                     _joint.linearLimit = new SoftJointLimit() { limit = 0.03f };
                     _joint.projectionMode = JointProjectionMode.PositionAndRotation;
                     
-                    _joint.breakForce = float.MaxValue;
+                    _joint.breakForce = 10e25f;
 
                     // extra stability
                     //hit.rigidbody.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;

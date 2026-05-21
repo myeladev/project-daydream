@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace ProjectDaydream.Objects.Furniture
 {
-    public class LightSwitch : MonoBehaviour, IInteractable
+    public class LightSwitch : MonoBehaviour, IInteractionProvider
     {
         private List<LightController> attachedLights;
         

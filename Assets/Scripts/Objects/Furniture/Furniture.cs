@@ -9,7 +9,8 @@ using CharacterController = ProjectDaydream.Logic.CharacterController;
 
 namespace ProjectDaydream.Objects.Furniture
 {
-    public class Furniture : MonoBehaviour, IInteractable, IDataPersistence
+    [RequireComponent(typeof(Interactable))]
+    public class Furniture : MonoBehaviour, IInteractionProvider, IDataPersistence
     {
         public bool IsInteractable => InteractController.Instance.CanInteract;
 

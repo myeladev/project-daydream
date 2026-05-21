@@ -20,7 +20,6 @@ namespace ProjectDaydream.Logic
 
         private DateTime StartDate => new DateTime(settings.startingYear, settings.startingMonth, settings.startingDay,
             settings.startingHour, settings.startingMinute, 0);
-        
 
         private void Awake()
         {

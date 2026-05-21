@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace ProjectDaydream.Objects.Vehicles
 {
-    public class VehicleStorage : MonoBehaviour, IInteractable
+    public class VehicleStorage : MonoBehaviour, IInteractionProvider
     {
         private readonly List<Furniture.Furniture> _storedFurniture = new();
         private List<Transform> _furniturePositions = new();

@@ -1,4 +1,6 @@
-﻿namespace ProjectDaydream.SaveData
+﻿using ProjectDaydream.DataPersistence;
+
+namespace ProjectDaydream.SaveData
 {
 #if UNITY_EDITOR
 using UnityEditor;

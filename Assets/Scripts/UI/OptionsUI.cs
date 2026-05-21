@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using ProjectDaydream.Logic;
+using ProjectDaydream.Objects;
 using UnityEngine;
 
 namespace ProjectDaydream.UI
@@ -20,12 +21,12 @@ namespace ProjectDaydream.UI
         [SerializeField]
         private InteractOption interactOptionPrefab;
         private List<InteractOption> _options = new List<InteractOption>();
-        private IInteractable _interactable;
+        private Interactable interactable;
         public void Refresh()
         {
-            if (_interactable is not null)
+            if (interactable is not null)
             {
-                var interactOptions = _interactable.GetInteractOptions(InteractContext.Default);
+                var interactOptions = interactable.GetInteractOptions(InteractContext.RightClick);
 
                 foreach (var option in interactOptions)
                 {
@@ -50,9 +51,9 @@ namespace ProjectDaydream.UI
             _options.Clear();
         }
         
-        public void Open(IInteractable interactable)
+        public void Open(Interactable target)
         {
-            _interactable = interactable;
+            interactable = target;
             canvasGroup.alpha = 1;
             canvasGroup.interactable = true;
             Refresh();
@@ -60,13 +61,13 @@ namespace ProjectDaydream.UI
 
         public void ChooseOption(string option)
         {
-            _interactable.Interact(option, InteractContext.Default);
+            interactable.Interact(option, InteractContext.Default);
             Close();
         }
 
         private void Close()
         {
-            _interactable = null;
+            interactable = null;
             canvasGroup.alpha = 0;
             canvasGroup.interactable = false;
             ClearOptions();

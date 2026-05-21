@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ProjectDaydream.Logic
 {
-    public class ContainerObject : MonoBehaviour, IInteractable
+    public class ContainerObject : MonoBehaviour, IInteractionProvider
     {
         public int width = 4;
         public int height = 2;
