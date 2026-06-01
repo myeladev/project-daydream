@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -3877364450042646014}
   - component: {fileID: 4696430156971419940}
   - component: {fileID: 6532627662889977144}
+  - component: {fileID: 7913927622451392890}
   m_Layer: 7
   m_Name: Hammer
   m_TagString: Untagged
@@ -44,7 +45,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 807417963300205210}
-  m_Mesh: {fileID: -2432090755550338912, guid: de772df2f3a490d42b0279964eee7b95, type: 3}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &9217523398099210882
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -65,10 +66,12 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -2894049423706387857, guid: de772df2f3a490d42b0279964eee7b95, type: 3}
+  - {fileID: 2100000, guid: 2ab8149ec4775284bada96c1b85b4a09, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,9 +89,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!54 &-3877364450042646014
 Rigidbody:
@@ -97,10 +102,10 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 807417963300205210}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -129,10 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dc519d14811bcf41b60ec63330af466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Hammer
-  itemDescription: Used for smashing things
-  weight: 2
-  canClean: 0
+  itemDefinition: {fileID: 11400000, guid: de300af0f77dda14188d7c3dd7f96454, type: 2}
 --- !u!114 &6532627662889977144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,6 +148,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 
+--- !u!114 &7913927622451392890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807417963300205210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38d6386102ec40b0b4969bf9ad58d318, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectDaydream.Objects.Interactable
+  isInteractable: 1
 --- !u!1 &6975451676898841470
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,7 +171,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2050504405189867011}
   - component: {fileID: 2388754642505054531}
-  - component: {fileID: 556506480101987228}
   m_Layer: 7
   m_Name: Colliders
   m_TagString: Untagged
@@ -198,26 +212,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.22, y: 1.8613892, z: 0.27}
-  m_Center: {x: 0, y: -0.43, z: 0}
---- !u!65 &556506480101987228
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6975451676898841470}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.19, y: 0.3153038, z: 1}
-  m_Center: {x: 0, y: 0.37, z: 0}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

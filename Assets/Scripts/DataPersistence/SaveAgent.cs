@@ -8,9 +8,14 @@ namespace ProjectDaydream.DataPersistence
     public class SaveAgent : MonoBehaviour
     {
         public string id;
-
+        
         public void SaveData(ref GameData gameData)
         {
+            if (string.IsNullOrWhiteSpace(id))
+            {
+                Debug.LogWarning("SaveAgent has no ID. Cannot save data.", gameObject);
+                return;
+            }
             var saveTargets = GetComponents<IDataPersistence>();
             foreach (var saveTarget in saveTargets)
             {

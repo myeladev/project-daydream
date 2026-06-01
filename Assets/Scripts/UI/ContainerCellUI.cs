@@ -7,19 +7,17 @@ using UnityEngine.UI;
 
 namespace ProjectDaydream.UI
 {
-    public class ContainerCellUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+    public class ContainerCellUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
     {
         public ContainerGrid ContainerGrid;
         public Image iconImage;
-        [HideInInspector] public int x, y;
-        public Vector2Int Position => new (x, y);
+        [HideInInspector] public int index;
 
-        public void Init(ContainerGrid containerGrid, int x, int y)
+        public void Init(ContainerGrid containerGrid, int cellIndex)
         {
-            this.ContainerGrid = containerGrid;
-            this.x = x;
-            this.y = y;
-            UpdateVisual(ContainerGrid.GetItemAt(x, y)?.ItemDefinition);
+            ContainerGrid = containerGrid;
+            index = cellIndex;
+            UpdateVisual(ContainerGrid.GetItemAt(cellIndex)?.ItemDefinition);
         }
 
         public void UpdateVisual(ItemDefinition itemDefinition)
@@ -92,6 +90,13 @@ namespace ProjectDaydream.UI
             // or null if no such object was found
 
             InventoryUI.Instance.FinishDragging(otherCell);
+        }
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            if (eventData.button != PointerEventData.InputButton.Left) return;
+            if (eventData.dragging) return;
+            InventoryUI.Instance.TryTransferItem(this);
         }
     }
 }

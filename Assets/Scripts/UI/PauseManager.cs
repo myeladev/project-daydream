@@ -31,13 +31,13 @@ namespace ProjectDaydream.UI
         {
             if (_pauseAction.WasPressedThisFrame() && !SceneManager.Instance.IsInMainMenu && !PlayerController.Instance.IsDriving)
             {
-                if (!isPaused)
+                if (GameplayUI.Instance.IsAnyPanelActive())
                 {
-                    GameplayUI.Instance.PushPanel(pauseMenu);
+                    GameplayUI.Instance.PopPanel();
                 }
                 else
                 {
-                    GameplayUI.Instance.PopPanel();
+                    GameplayUI.Instance.PushPanel(pauseMenu);
                 }
             }
         }

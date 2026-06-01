@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using ProjectDaydream.Logic;
 using ProjectDaydream.Objects.Items;
 using TMPro;
@@ -19,6 +20,9 @@ namespace ProjectDaydream.UI
         
         [SerializeField] private ContainerGridUI pocketGrid;
         [SerializeField] private ContainerGridUI backpackGrid;
+        [SerializeField] private GameObject backpackText;
+        [SerializeField] private ContainerGridUI equipmentBackpackGrid;
+        [SerializeField] private ContainerGridUI equipmentFlashlightGrid;
         /// <summary>
         /// The grid of the container object that the player is currently interacting with.
         /// </summary>
@@ -31,12 +35,14 @@ namespace ProjectDaydream.UI
         {
             base.Awake();
             Instance = this;
-            pocketGrid.Init(InventoryController.Instance.Pockets);
-            backpackGrid.Init(InventoryController.Instance.backpack?.ContainerGrid);
         }
         
         private void Start()
         {
+            pocketGrid.Init(InventoryController.Instance.Pockets);
+            backpackGrid.Init(InventoryController.Instance.backpack?.ContainerGrid);
+            equipmentBackpackGrid.Init(InventoryController.Instance.EquippedBackpack);
+            equipmentFlashlightGrid.Init(InventoryController.Instance.EquippedFlashlight);
             _interactAction = InputSystem.actions.FindAction("Interact");
             _dropAction = InputSystem.actions.FindAction("Drop");
         }
@@ -51,28 +57,29 @@ namespace ProjectDaydream.UI
             }
         }
 
-        private Vector2Int? _draggedItemPosition;
+        private int? _draggedItemIndex;
+        private ContainerGrid _draggedItemContainer;
 
         public void StartDragging(ContainerCellUI cell)
         {
-            _draggedItemPosition = new Vector2Int(cell.x, cell.y);
-            Debug.Log("Start", cell);
+            _draggedItemIndex = cell.index;
+            _draggedItemContainer = cell.ContainerGrid;
         }
 
         public void FinishDragging(ContainerCellUI cell)
         {
             if (!cell) return;
-            Debug.Log("Finish", cell);
-            if (_draggedItemPosition is null) return;
-            
+            if (_draggedItemIndex is null || _draggedItemContainer is null) return;
+
             // Invoke the TrySwapItems method from InventoryController
-            cell.ContainerGrid.TrySwapItems(_draggedItemPosition.Value, cell.ContainerGrid, cell.Position);
+            _draggedItemContainer.TrySwapItems(_draggedItemIndex.Value, cell.ContainerGrid, cell.index);
 
             // Refresh the UI after the swap
             Refresh();
             
             // Clear the position of the dragged item
-            _draggedItemPosition = null;
+            _draggedItemIndex = null;
+            _draggedItemContainer = null;
         }
         public override void OnShow()
         {
@@ -87,6 +94,11 @@ namespace ProjectDaydream.UI
             
             pocketGrid.Refresh();
             backpackGrid?.Refresh();
+            equipmentBackpackGrid?.Refresh();
+            equipmentFlashlightGrid?.Refresh();
+
+            backpackGrid?.gameObject.SetActive(InventoryController.Instance.backpack);
+            backpackText.SetActive(InventoryController.Instance.backpack);
         }
 
         protected override void OnHide()
@@ -98,6 +110,49 @@ namespace ProjectDaydream.UI
             
         }
         
+        public void TryTransferItem(ContainerCellUI sourceCell)
+        {
+            var item = sourceCell.ContainerGrid.GetItemAt(sourceCell.index);
+            if (item == null) return;
+
+            var focusGrid = _openContainerObject?.ContainerGrid;
+            var pockets = InventoryController.Instance.Pockets;
+            var backpackGrid = InventoryController.Instance.backpack?.ContainerGrid;
+
+            // Build priority-ordered list of transfer targets
+            var targets = new List<ContainerGrid>();
+            if (sourceCell.ContainerGrid == focusGrid)
+            {
+                // World container → pockets first, then backpack
+                targets.Add(pockets);
+                if (backpackGrid != null) targets.Add(backpackGrid);
+            }
+            else
+            {
+                // Player inventory → focus container if open, then the other player grid
+                if (focusGrid != null) targets.Add(focusGrid);
+                if (sourceCell.ContainerGrid == pockets && backpackGrid != null)
+                    targets.Add(backpackGrid);
+                else if (sourceCell.ContainerGrid == backpackGrid)
+                    targets.Add(pockets);
+            }
+
+            foreach (var target in targets)
+            {
+                if (!target.HasAnyAvailableSpace()) continue;
+
+                sourceCell.ContainerGrid.RemoveItem(item);
+                if (target.TryAddItem(item, null))
+                {
+                    Refresh();
+                    return;
+                }
+
+                // Target was unexpectedly full — restore and try the next one
+                sourceCell.ContainerGrid.PlaceItem(item, sourceCell.index);
+            }
+        }
+
         public void ShowContainer(ContainerObject containerObject)
         {
             _openContainerObject = containerObject;

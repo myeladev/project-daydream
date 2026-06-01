@@ -33,15 +33,12 @@ namespace ProjectDaydream.UI
                 return;
             }
             
-            for (int x = 0; x < _containerGrid.Width; x++)
+            for (int i = 0; i < _containerGrid.Size; i++)
             {
-                for (int y = 0; y < _containerGrid.Height; y++)
-                {
-                    var spawnedCellGameobject = Instantiate(cellPrefab.gameObject, transform);
-                    var newCell = spawnedCellGameobject.GetComponent<ContainerCellUI>();
-                    newCell.Init(_containerGrid, x % _containerGrid.Width, x / _containerGrid.Width);
-                    _cells.Add(newCell);
-                }
+                var spawnedCellGameobject = Instantiate(cellPrefab.gameObject, transform);
+                var newCell = spawnedCellGameobject.GetComponent<ContainerCellUI>();
+                newCell.Init(_containerGrid, i);
+                _cells.Add(newCell);
             }
         }
         

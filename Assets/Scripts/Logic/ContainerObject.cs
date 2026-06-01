@@ -6,11 +6,10 @@ namespace ProjectDaydream.Logic
 {
     public class ContainerObject : MonoBehaviour, IInteractionProvider
     {
-        public int width = 4;
-        public int height = 2;
+        public int size = 4;
         private void Awake()
         {
-            ContainerGrid = new ContainerGrid(width, height);
+            ContainerGrid = new ContainerGrid(size);
         }
         
         public ContainerGrid ContainerGrid;

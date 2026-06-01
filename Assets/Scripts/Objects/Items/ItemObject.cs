@@ -1,21 +1,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using ProjectDaydream.Common;
+using ProjectDaydream.DataPersistence;
 using ProjectDaydream.Logic;
 using ProjectDaydream.UI;
 using UnityEngine;
 
 namespace ProjectDaydream.Objects.Items
 {
+    [RequireComponent(typeof(SaveAgent))]
     public class ItemObject : Prop, IInteractionProvider
     {
         public ItemDefinition itemDefinition;
         private List<Collider> _colliders;
+        private SaveAgent saveAgent;
 
         protected new void Awake()
         {
             base.Awake();
             _colliders = GetComponentsInChildren<Collider>().ToList();
+            saveAgent = GetComponent<SaveAgent>();
         }
 
         public new List<string> GetInteractOptions(InteractContext context)
@@ -41,7 +45,7 @@ namespace ProjectDaydream.Objects.Items
                     Rigidbody.linearVelocity = Vector3.zero;
                     break;
                 case "Pickup":
-                    var success = InventoryController.Instance.TryAddItem(new ContainerGridItem(itemDefinition));
+                    var success = InventoryController.Instance.TryAddItem(new ContainerGridItem(itemDefinition, saveAgent.id));
 
                     if (!success)
                     {

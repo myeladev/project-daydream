@@ -11,7 +11,7 @@ namespace ProjectDaydream.UI
         [SerializeField] private TextMeshProUGUI selectedItemNameText;
         private int SelectedIndex => InventoryController.Instance.selectedPocketIndex;
         
-        protected void Awake()
+        protected void Start()
         {
             pocketGrid.Init(InventoryController.Instance.Pockets);
         }
@@ -19,7 +19,7 @@ namespace ProjectDaydream.UI
         void Update()
         {
             selectedIndicator.position = pocketGrid.GetCells()[SelectedIndex].transform.position;
-            selectedItemNameText.text = InventoryController.Instance.Pockets.GetItemAt(SelectedIndex, 0)?.ItemDefinition?.name ?? string.Empty;
+            selectedItemNameText.text = InventoryController.Instance.Pockets.GetItemAt(SelectedIndex)?.ItemDefinition?.name ?? string.Empty;
         }
     }
 }

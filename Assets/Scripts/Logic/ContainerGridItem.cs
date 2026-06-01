@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace ProjectDaydream.Logic
 {
@@ -6,13 +7,16 @@ namespace ProjectDaydream.Logic
     {
         public ItemDefinition ItemDefinition;
         public Sprite Icon => ItemDefinition.icon;
-
+        public string ItemId => itemId;
+        private string itemId;
+        
         // Reference to where it's placed
-        public Vector2Int Position;
+        public int Index;
 
-        public ContainerGridItem(ItemDefinition itemDefinition)
+        public ContainerGridItem(ItemDefinition itemDefinition, string itemId)
         {
             ItemDefinition = itemDefinition;
+            this.itemId = itemId;
         }
     }
 }

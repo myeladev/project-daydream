@@ -1,81 +1,79 @@
-﻿using ProjectDaydream.UI;
+﻿using System;
+using ProjectDaydream.UI;
 using UnityEngine;
 
 namespace ProjectDaydream.Logic
 {
     public class ContainerGrid
     {
-        public int Width;
-        public int Height;
         public int Size => grid.Length;
-        private ContainerGridItem[,] grid;
+        private ContainerGridItem[] grid;
+        private Func<ContainerGridItem, bool> itemConstraint;
 
-        public ContainerGrid(int width, int height)
+        public ContainerGrid(int size, Func<ContainerGridItem, bool> itemConstraint = null)
         {
-            Width = width;
-            Height = height;
-            grid = new ContainerGridItem[width, height];
+            grid = new ContainerGridItem[size];
+            this.itemConstraint = itemConstraint;
         }
 
-        public bool CanPlaceItem(int x, int y)
+        public bool CanPlaceItem(ContainerGridItem containerGridItem, int index)
         {
-            return grid[x, y] == null;
+            if (itemConstraint is not null)
+            {
+                if (!itemConstraint(containerGridItem))
+                    return false;
+            }
+            return grid[index] == null;
         }
 
-        public bool PlaceItem(ContainerGridItem containerGridItem, int x, int y)
+        public bool PlaceItem(ContainerGridItem containerGridItem, int index)
         {
-            if (!CanPlaceItem(x, y))
+            if (!CanPlaceItem(containerGridItem, index))
                 return false;
 
-            grid[x, y] = containerGridItem;
+            grid[index] = containerGridItem;
 
-            containerGridItem.Position = new Vector2Int(x, y);
+            containerGridItem.Index = index;
             return true;
         }
 
         public ContainerGridItem RemoveItem(ContainerGridItem containerGridItem)
         {
-            for (int i = 0; i < Width; i++)
+            for (int i = 0; i < Size; i++)
             {
-                for (int j = 0; j < Height; j++)
+                if (grid[i] == containerGridItem)
                 {
-                    if (grid[i, j] == containerGridItem)
-                    {
-                        var returnItem = grid[i, j];
-                        grid[i, j] = null;
-                        return returnItem;
-                    }
+                    var returnItem = grid[i];
+                    grid[i] = null;
+                    return returnItem;
                 }
             }
 
             return null;
         }
 
-        public ContainerGridItem GetItemAt(int x, int y)
+        public ContainerGridItem GetItemAt(int index)
         {
-            return grid[x, y];
+            return grid[index];
         }
 
         public bool HasAnyAvailableSpace()
         {
-            for (int x = 0; x < Width; x++)
+            for (int i = 0; i < Size; i++)
             {
-                for (int y = 0; y < Height; y++)
-                {
-                    if (grid[x, y] == null)
-                        return true;
-                }
+                if (grid[i] == null)
+                    return true;
             }
 
             return false;
         }
         
         
-        public bool TryAddItem(ContainerGridItem item, int? x = null, int? y = null)
+        public bool TryAddItem(ContainerGridItem item, int? index)
         {
-            if (x.HasValue && y.HasValue)
+            if (index.HasValue)
             {
-                bool added = PlaceItem(item, x.Value, y.Value);
+                bool added = PlaceItem(item, index.Value);
                 if (added)
                 {
                     InventoryUI.Instance.Refresh();
@@ -83,20 +81,16 @@ namespace ProjectDaydream.Logic
                 return added;
             }
             
-            // Try to find the first available space
-            for (int row = 0; row <= Width; row++)
+            for (int i = 0; i < Size; i++)
             {
-                for (int col = 0; col <= Height; col++)
+                if (CanPlaceItem(item, i))
                 {
-                    if (CanPlaceItem(row, col))
+                    bool added = PlaceItem(item, i);
+                    if (added)
                     {
-                        bool added = PlaceItem(item, row, col);
-                        if (added)
-                        {
-                            InventoryUI.Instance.Refresh();
-                        }
-                        return added;
+                        InventoryUI.Instance.Refresh();
                     }
+                    return added;
                 }
             }
 
@@ -104,10 +98,10 @@ namespace ProjectDaydream.Logic
             return false;
         }
         
-        public bool TrySwapItems(Vector2Int sourcePosition, ContainerGrid targetContainer, Vector2Int targetPosition)
+        public bool TrySwapItems(int sourceIndex, ContainerGrid targetContainer, int targetIndex)
         {
-            ContainerGridItem item1 = GetItemAt(sourcePosition.x, sourcePosition.y);
-            ContainerGridItem item2 = targetContainer.GetItemAt(targetPosition.x, targetPosition.y);
+            ContainerGridItem item1 = GetItemAt(sourceIndex);
+            ContainerGridItem item2 = targetContainer.GetItemAt(targetIndex);
 
             if (item1 == null)
             {
@@ -118,19 +112,19 @@ namespace ProjectDaydream.Logic
             var removedItem1 = RemoveItem(item1);
             var removedItem2 = targetContainer.RemoveItem(item2);
             
-            if ((item2 is null || CanPlaceItem(sourcePosition.x, sourcePosition.y)) &&
-                targetContainer.CanPlaceItem(targetPosition.x, targetPosition.y))
+            if ((item2 is null || CanPlaceItem(item2, sourceIndex)) &&
+                targetContainer.CanPlaceItem(item1, targetIndex))
             {
-                if(item2 is not null) PlaceItem(item2, sourcePosition.x, sourcePosition.y);
-                targetContainer.PlaceItem(item1, targetPosition.x, targetPosition.y);
+                if(item2 is not null) PlaceItem(item2, sourceIndex);
+                targetContainer.PlaceItem(item1, targetIndex);
                     
                 InventoryUI.Instance.Refresh();
                 return true;
             }
             else
             {
-                targetContainer.PlaceItem(removedItem1, sourcePosition.x, sourcePosition.y);
-                if(item2 is not null) PlaceItem(removedItem2, targetPosition.x, targetPosition.y);
+                PlaceItem(removedItem1, sourceIndex);
+                if(item2 is not null) targetContainer.PlaceItem(removedItem2, targetIndex);
             }
                 
             return false;

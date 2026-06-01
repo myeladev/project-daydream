@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using ProjectDaydream.Common;
 using ProjectDaydream.Logic;
+using ProjectDaydream.Objects.Items;
 using ProjectDaydream.SaveData;
 using ProjectDaydream.UI;
 using UnityEngine;
@@ -62,7 +63,8 @@ namespace ProjectDaydream.DataPersistence
             }
 
             PlayerController.Instance.SaveData(ref gameData);
-            
+            InventoryController.Instance.SaveData(ref gameData);
+
             fileManager.SaveProfileData(metaData.profileName, gameData);
         }
 
@@ -79,7 +81,8 @@ namespace ProjectDaydream.DataPersistence
             foreach (var a in agents) a.LoadData(gameData);
 
             PlayerController.Instance.LoadData(gameData);
-            
+            InventoryController.Instance.LoadData(gameData);
+
             // TODO: spawned objects
             // If not found: this is a spawned/missing object → instantiate via your PrefabRegistry, then Restore(rec)
         }

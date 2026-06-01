@@ -12,5 +12,6 @@ namespace ProjectDaydream.Logic
         public Sprite icon;
         public ItemObject prefab;
         public bool canClean;
+        public ItemCategory category;
     }
 }
