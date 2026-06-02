@@ -18,6 +18,11 @@ namespace ProjectDaydream.Logic
         [SerializeField] private Color nightAmbientLight;
         [SerializeField] private Volume volume;
         [SerializeField] private Material skyboxMaterial;
+
+        [Header("Fog")]
+        [SerializeField] private Color fogColor = new Color(0.05f, 0.1f, 0.16f);
+        [SerializeField] private FogMode fogMode = FogMode.ExponentialSquared;
+        [SerializeField] private float fogDensity = 0.03f;
         
         
         private ColorAdjustments colorAdjustments;
@@ -33,11 +38,20 @@ namespace ProjectDaydream.Logic
         {
             RenderSettings.skybox = skyboxMaterial;
             RenderSettings.sun = sun;
+            ApplyFogSettings();
             DynamicGI.UpdateEnvironment();
         }
-        
+
         private void Start() {
             volume.profile.TryGet(out colorAdjustments);
+            ApplyFogSettings();
+        }
+
+        private void ApplyFogSettings() {
+            RenderSettings.fog = true;
+            RenderSettings.fogColor = fogColor;
+            RenderSettings.fogMode = fogMode;
+            RenderSettings.fogDensity = fogDensity;
         }
 
         private void Update() {
@@ -76,6 +90,9 @@ namespace ProjectDaydream.Logic
             
             sun.intensity = Mathf.Lerp(0, maxSunIntensity, lightIntensity);
             moon.intensity = Mathf.Lerp(maxMoonIntensity, 0, lightIntensity);
+
+            sun.gameObject.SetActive(dotProduct > -0.1f);
+            moon.gameObject.SetActive(dotProduct < 0.1f);
             
             if (colorAdjustments)
             {

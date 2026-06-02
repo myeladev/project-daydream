@@ -33,8 +33,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Blend: 0.9885392
-    - _Rotation: 69.281425
+    - _Blend: 0.958766
+    - _Rotation: 69.62671
     m_Colors:
     - _RotationAxis: {r: 0, g: 90, b: 0, a: 0}
   m_BuildTextureStacks: []
