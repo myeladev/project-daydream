@@ -21,6 +21,7 @@ namespace ProjectDaydream.UI
         [SerializeField] private ContainerGridUI pocketGrid;
         [SerializeField] private ContainerGridUI backpackGrid;
         [SerializeField] private GameObject backpackText;
+        [SerializeField] private TextMeshProUGUI containerNameText;
         [SerializeField] private ContainerGridUI equipmentBackpackGrid;
         [SerializeField] private ContainerGridUI equipmentFlashlightGrid;
         /// <summary>
@@ -158,6 +159,7 @@ namespace ProjectDaydream.UI
             _openContainerObject = containerObject;
             focusContainerGrid.Init(containerObject.ContainerGrid);
             focusContainerPanel.gameObject.SetActive(true);
+            containerNameText.text = containerObject.containerName ?? "Container";
         }
     }
 }

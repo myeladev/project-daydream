@@ -6,6 +6,7 @@ namespace ProjectDaydream.Logic
 {
     public class ContainerObject : MonoBehaviour, IInteractionProvider
     {
+        public string containerName;
         public int size = 4;
         private void Awake()
         {
@@ -17,7 +18,7 @@ namespace ProjectDaydream.Logic
         public List<string> GetInteractOptions(InteractContext context)
         {
             // Get the base prop interactions
-            var interactList = new List<string>();//base.GetInteractOptions(context);
+            var interactList = new List<string>();
 
             if (context == InteractContext.Default)
             {

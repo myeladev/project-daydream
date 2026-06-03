@@ -86,10 +86,7 @@ namespace ProjectDaydream.Logic
             // Handle flashlight control
             if (_flashlightAction.WasPressedThisFrame() && Cursor.lockState == CursorLockMode.Locked && !_activeVehicle)
             {
-                foreach (var fLight in flashlight)
-                {
-                    fLight.enabled = !fLight.enabled;
-                }
+                SetFlashlight(!flashlight.FirstOrDefault()?.enabled ?? false);
             }
 
             if(flashlightTransform != null)
@@ -118,8 +115,17 @@ namespace ProjectDaydream.Logic
             HandleCharacterInput();
         }
 
+        private void SetFlashlight(bool on)
+        {
+            foreach (var fLight in flashlight)
+            {
+                fLight.enabled = on;
+            }
+        }
+
         public void SetActiveVehicle(VehicleController controller)
         {
+            SetFlashlight(false);
             character.TransitionToState(CharacterState.Driving);
             _activeVehicle = controller;
         }
